@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>es como fuck</title>
+  <style>
+    body {
+      text-align: center;
+      margin-top: 50px;
+      background-color: black;
+      color: white;
+    }
+
+    img {
+      width: 400px;
+    }
+
+    #playBtn {
+      margin-top: 20px;
+      padding: 10px 20px;
+      font-size: 16px;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <img src="img/tenna.gif" alt="GIF animado">
+
+  <audio id="musica" loop>
+    <source src="audio/tenna.mp3" type="audio/mpeg">
+  </audio>
+
+  <button id="playBtn" onclick="document.getElementById('musica').play()">Picale we</button>
+
+  <script>
+    const musica = document.getElementById('musica');
+    const btn = document.getElementById('playBtn');
+    window.addEventListener('load', () => {
+      const playPromise = musica.play();
+
+      if (playPromise !== undefined) {
+        playPromise
+          .then(() => {
+            console.log("Autoplay funcionando");
+          })
+          .catch((error) => {
+            console.log("Autoplay bloqueado, mostrando botón");
+            btn.style.display = 'inline-block';
+          });
+      }
+    });
+  </script>
+  <h1>Si no lo escuchas eres un fucking jodido, GG</h1>
+</body>
+</html>
